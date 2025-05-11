@@ -1,0 +1,167 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #0e0e0e;
+  font-family: 'Pixelify Sans', sans-serif;
+  position: relative;
+  color: #fff;
+  cursor: url('../img/cursor/gameboy.gif'), auto;
+}
+
+.binary-title {
+  font-family: 'Courier New', monospace;
+  font-size: 90px;
+  color: #5ad3ff;
+  text-align: center;
+  margin-top: 20vh;
+  line-height: 1.6;
+  text-shadow:
+    0 0 8px #5ad3ff,
+    0 0 16px #009dff;
+  animation: peekaboo 3s ease-out forwards, pulse 3s ease-in-out infinite;
+  animation-delay: 0s, 3s;
+  opacity: 0;
+}
+
+@keyframes peekaboo {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-2deg) translateY(20px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05) rotate(1deg) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #5ad3ff;
+  }
+  50% {
+    transform: scale(1.03);
+    text-shadow: 0 0 20px #009dff;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #5ad3ff;
+  }
+}
+
+
+.emoji {
+  display: inline-block;
+  font-size: 0.9em;
+  transform: translateY(-12px);
+  filter: drop-shadow(0 0 4px #5ad3ff);
+  animation: floatyHeart 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatyHeart {
+  0% {
+    transform: translateY(-12px) scale(1);
+  }
+  100% {
+    transform: translateY(5px) scale(1.1);
+  }
+}
+
+.typewriter {
+  font-size: 48px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #5ad3ff;
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Pixelify Sans', sans-serif;
+  white-space: pre-wrap; 
+  opacity: 0;
+  animation: fadeInText 0.5s ease forwards;
+  animation-delay: 2;
+  white-space: pre-wrap;
+}
+
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glowIntro {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 0px #000;
+  }
+  40% {
+    opacity: 1;
+    text-shadow:
+      0 0 12px #5ad3ff,
+      0 0 24px #009dff,
+      0 0 36px #5ad3ff;
+  }
+  100% {
+    opacity: 1;
+    text-shadow:
+      0 0 8px #5ad3ff,
+      0 0 16px #009dff;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.pixel-button {
+  font-family: 'Pixelify Sans', sans-serif;
+  background-color: #0e0e0e;
+  color: #5ad6ff;
+  font-size: 20px;
+  text-align: center;
+  padding: 16px 24px;
+  border: 4px solid #00d0ff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00d0ff;
+  text-decoration: none;
+  cursor: url('../img/cursor/cute.gif'), auto;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pixel-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00e6ff, 0 0 45px #5ad6ff;
+}
+
+.pixel-button:active {
+  transform: scale(0.95);
+}
+
+.pixel-button .note {
+  display: block;
+  font-size: 14px;
+  color: #b0eaff;
+  margin-top: 6px;
+}
+
+#summon-button {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+#summon-button.show {
+  opacity: 1;
+}

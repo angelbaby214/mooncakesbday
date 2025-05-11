@@ -1,0 +1,126 @@
+/* i just built the longest css page ever so its need another one */
+
+/* these probably just overrides ngl */
+.floaty-feather-boi {
+  position: absolute;
+  top: -80px;
+  width: 60px;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatyFeather 12s ease-in infinite;
+}
+
+@keyframes floatyFeather {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-20px) translateY(40vh) rotate(10deg);
+    opacity: 0.8;
+  }
+  70% {
+    transform: translateX(30px) translateY(80vh) rotate(-10deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(10px) translateY(100vh) rotate(5deg);
+    opacity: 0;
+  }
+}
+
+/* do you want me or not? */
+.slidey-grid-yeet {
+  position: relative;
+  animation: slideInWithGrace 3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+@keyframes slideInWithGrace {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title-wiggle-wow {
+  position: relative;
+  animation: titleSlideZoom 3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-40px) scale(0.9);
+}
+
+@keyframes titleSlideZoom {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.desc-fade-slink {
+  position: relative;
+  animation: descSlinkFade 3s ease-in forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes descSlinkFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* i heard one thing and i heart another */
+.heart-drop-bounce {
+  animation: heartDropIn 0.8s ease-out;
+}
+
+@keyframes heartDropIn {
+  0% {
+    transform: translateY(-60px) scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px) scale(1.15);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-5px) scale(0.95);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* im just a groupie love */
+.floaty-heart {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* its hard when you have to share him w everybody */
+.heart-loved {
+  animation: radiancePop 0.6s ease-out;
+}
+
+@keyframes radiancePop {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 transparent;
+  }
+  40% {
+    transform: scale(1.25);
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(255, 182, 193, 0.5);
+  }
+}

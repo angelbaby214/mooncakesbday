@@ -1,0 +1,207 @@
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Pixelify Sans', sans-serif;
+  color: #6bc9ff;
+  cursor: url('../img/cursor/cheer.gif'), auto;
+}
+
+.container,
+.mouse-swarm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mouse {
+  width: 128px;
+  height: auto;
+  image-rendering: pixelated;
+  position: absolute;
+  animation: scurry-right 12s linear forwards;
+}
+
+@keyframes scurry-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+/* once i run to you */
+.shark-princess {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 2s ease-in;
+}
+
+.shark-princess img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shark-princess.show {
+  opacity: 1;
+}
+
+
+
+/* now i run from you */
+.title {
+  position: absolute;
+  top: 3vh;
+  right: 5vw; /* i gave you all a girl could give you */
+  z-index: 3;
+  font-size: 7.5rem;
+  color: #6bc9ff;
+  text-align: right;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+}
+
+.fireworks {
+  animation: fireworksIntro 3.5s ease-out forwards;
+}
+
+.title.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* take my tears and thats not nearly all */
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+
+.title-inner {
+  display: inline-block;
+  opacity: 0;
+}
+
+.title-inner.fireworks {
+  opacity: 1;
+  animation: fireworksIntro 3.5s ease-out forwards, pulseGlow 2s ease-in-out infinite alternate;
+}
+
+
+
+@keyframes fireworksIntro {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-10deg);
+    filter: blur(10px);
+    text-shadow: none;
+  }
+
+  20% {
+    opacity: 0.6;
+    transform: scale(1.2) rotate(5deg);
+    filter: blur(2px);
+    text-shadow: 0 0 10px #6bc9ff;
+  }
+
+  50% {
+    transform: scale(0.9) rotate(-2deg);
+    text-shadow: 0 0 20px #6bc9ff, 0 0 40px #ffffff;
+  }
+
+  80% {
+    transform: scale(1.05) rotate(1deg);
+    text-shadow: 0 0 30px #6bc9ff, 0 0 60px #ffffff;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0);
+    text-shadow: 0 0 15px #6bc9ff, 0 0 30px #ffffff, 0 0 50px #6bc9ff;
+  }
+}
+
+
+/* i think you're standing on my left food */
+#attentionBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 18px 36px;
+  font-size: 1.6rem;
+  background-color: #ccc; /* its hurting but thats okay */
+  color: #000;
+  border: 4px solid #666; /* why do i cry */
+  outline: 2px solid #fff; /* so sad to that i barely spend time with you */
+  border-radius: 0; /* pixel vibez */
+  cursor: url('../img/cursor/cheer.gif'), auto;;
+  opacity: 0;
+  z-index: 3;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+  font-family: 'Pixelify Sans', sans-serif;
+  box-shadow: 0 0 0 4px #000; /* 6 days before */
+}
+
+#attentionBtn:active {
+  transform: translate(-50%, -50%) scale(0.95);
+  box-shadow: 0 0 0 2px #000;
+}
+
+#attentionBtn.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  animation: buttonDropGlow 3s ease-out forwards;
+}
+
+
+/* shine bright like a diamond ooooohhhh */
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 10px #6bc9ff, 0 0 20px #6bc9ff;
+    transform: scale(1);
+  }
+  100% {
+    text-shadow: 0 0 25px #6bc9ff, 0 0 40px #6bc9ff;
+    transform: scale(1.05);
+  }
+}
+@keyframes buttonDropGlow {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -200%) scale(0.5);
+    filter: brightness(1.5);
+  }
+  40% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.05);
+    filter: brightness(2);
+    box-shadow: 0 0 20px #ccc, 0 0 30px #999;
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -52%) scale(1);
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 8px #666;
+  }
+}
+

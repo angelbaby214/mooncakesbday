@@ -1,0 +1,69 @@
+body {
+  background-color: black;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Pixelify Sans', sans-serif;
+  cursor: url('../img/cursor/rainbow.gif'), auto;
+}
+
+
+
+/* you probably think that you are better now */
+#thankyou-title {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: #e2cf5e;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 15vh;
+  max-width: 90%;
+  margin-inline: auto;
+  position: relative;
+  
+  /* you only say that cause i'm not around */
+  -webkit-text-stroke: 1px white;
+  text-shadow: none;
+}
+
+
+/* you know ive never meant to let you down */
+#frog-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-frog {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* woulda give you everything */
+.sparkle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff, #bedbe4, #ffec87);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.8;
+}
+
+#cursor-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* actually listening to Kanye rn lol */
+  background-color: transparent;
+  cursor: url('../img/cursor/rainbow.gif'), auto;
+  pointer-events: auto;
+}
+

@@ -1,0 +1,270 @@
+  /* --- i should be glad --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #a9b6bb;
+  font-family: 'Quicksand', sans-serif;
+  color: #12309c;
+  cursor: url('../img/cursor/nyan.gif'), auto;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 3rem 2rem 2rem;
+  text-align: left;
+  width: 100%;
+}
+
+header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 6rem;
+  color: #0f7791d9;
+  -webkit-text-stroke: 1px white;
+  text-shadow: 0 0 8px #ffc0ea;
+  line-height: 1.1;
+}
+
+header p {
+  font-size: 1.75rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+  text-shadow: 0 0 2px #fff;
+  max-width: 900px;
+}
+
+/* --- i really need to master the art of detachment --- */
+.container {
+  max-width: 880px;
+  margin: 4rem auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.heart-box {
+  flex: 0 0 25%;
+  max-width: 200px;
+  text-align: center;
+  position: relative;
+}
+
+
+/* listening to margo guryan */
+.heart-img.glow-blue { filter: drop-shadow(0 0 10px #00d4ff); }
+.heart-img.glow-yellow { filter: drop-shadow(0 0 10px #f5d524); }
+.heart-img.glow-pink { filter: drop-shadow(0 0 10px #ff6acb); }
+.heart-img.glow-purple { filter: drop-shadow(0 0 10px #5a3d89); }
+.heart-img.glow-green { filter: drop-shadow(0 0 10px #27ee27); }
+.heart-img.glow-white { filter: drop-shadow(0 0 10px #2075ad); }
+.heart-img.glow-red { filter: drop-shadow(0 0 10px #d77182); }
+
+.heart-img:hover {
+  transform: scale(1.15);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+
+/* --- listening to lana's cherry cause love feels like that lately --- */
+.message {
+  display: none;
+  margin-top: 1.2rem;
+  padding: 1.25rem;
+  font-size: 1.25rem;
+  border-radius: 0.75rem;
+  background: #2691b4dd;
+  color: #1748c2;
+  text-align: left;
+  line-height: 1.6;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.message.show {
+  display: block;
+  transform: scale(1.05);
+}
+
+/* --- this was so tiny at first lol --- */
+.meter {
+  margin: 4rem auto 3rem;
+  text-align: center;
+}
+
+#meter img,
+.final-meter img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.meter img.animate {
+  animation: meter-pop 0.4s ease;
+}
+
+@keyframes meter-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+
+/* --- grrrrr this wont work at first --- */
+.final-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.final-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.0rem;
+}
+
+.final-meter img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.final-button {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  margin-bottom: 3rem;
+}
+
+.final-button.show {
+  display: block;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.final-button a {
+  padding: 1rem 2.2rem;
+  border: 2px solid #4cc9f0;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #e0f7ff;
+  background-color: #3fa3f7;
+  box-shadow: 0 0 10px rgba(76, 201, 240, 0.6),
+              0 0 20px rgba(46, 134, 222, 0.4),
+              inset 0 0 8px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: 0 0 4px #b8f1ff;
+  letter-spacing: 0.5px;
+}
+
+.final-button a:hover {
+  transform: scale(1.08) rotate(-0.5deg);
+  background-color: #4cc9f0;
+  box-shadow: 0 0 15px #82e0ff,
+              0 0 25px #48b1f3,
+              inset 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+/* ✨ is it real love? ✨ */
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #fff 20%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 10;
+  animation: sparkle-burst 0.8s forwards;
+}
+
+@keyframes sparkle-burst {
+  0% {
+    transform: scale(0.6) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2) translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+
+/* hes cool but im cooler than him */
+.heart-img.glow-red {
+  filter:
+    drop-shadow(0 0 6px #ff6b81)
+    drop-shadow(0 0 12px #ff87b2)
+    drop-shadow(0 0 20px #ffa3c4);
+  animation: pulse-heart 0.8s ease-in-out;
+}
+
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1.2); }
+  50% { transform: scale(1.4); }
+}
+
+.ring {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffa3c4;
+  border-radius: 50%;
+  opacity: 0.8;
+  transform: scale(0);
+  pointer-events: none;
+  animation: ring-burst 0.6s ease-out forwards;
+  z-index: 10;
+}
+
+@keyframes ring-burst {
+  to {
+    transform: scale(8);
+    opacity: 0;
+  }
+}
+
+.final-message-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.final-message {
+  max-width: 700px;
+  width: 90%;
+  padding: 2rem 3rem;
+  border-radius: 1.5rem;
+  background-color: #2691b4dd;
+  color: rgb(195, 40, 40);
+  font-size: 2rem;
+  line-height: 1.7;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes fallDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
